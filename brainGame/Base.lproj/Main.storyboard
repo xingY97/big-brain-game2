@@ -132,7 +132,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="Yes"/>
                                 <connections>
-                                    <segue destination="s2S-2e-Ksh" kind="unwind" unwindAction="unwindToStarterView:" id="u4b-gF-S3W"/>
+                                    <segue destination="s2S-2e-Ksh" kind="unwind" unwindAction="firstView:" id="bPL-uW-Bco"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Play Again?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYJ-zt-wW6">
@@ -163,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="5473.913043478261" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="yIZ-9f-Qft">
             <objects>
-                <viewController id="ayu-ZR-8yu" sceneMemberID="viewController">
+                <viewController id="ayu-ZR-8yu" customClass="StartViewController" customModule="brainGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RGv-Hn-zgk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

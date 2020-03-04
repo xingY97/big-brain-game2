@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FirstVc: UIViewController {
+class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +17,9 @@ class FirstVc: UIViewController {
     }
     
 
-    @IBAction func unwindToStarterView(_ segue: UIStoryboardSegue){
+    @IBAction func firstView(_ segue: UIStoryboardSegue){
+        
         
     }
-
-
+    
 }

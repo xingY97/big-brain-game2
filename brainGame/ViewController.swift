@@ -7,11 +7,11 @@
 //
 
 import UIKit
-    var time = 10
-    var timer1 = Timer()
+var time = 10
+var timer1 = Timer()
 
 class ViewController: UIViewController {
-
+    
     var score1 = 0
     
     
@@ -26,9 +26,9 @@ class ViewController: UIViewController {
     var bottomCardColor = Color ()
     
     var score: Int = 0 {
-      didSet {
-        scoreLabel.text = String(score)
-      }
+        didSet {
+            scoreLabel.text = String(score)
+        }
     }
     
     @objc func action() {
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         checkAnswer(yesTapped: true)
     }
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,18 +98,18 @@ class ViewController: UIViewController {
         
         timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.action), userInfo: nil, repeats: true)
         
-        func goBackToVC2(segue:UIStoryboardSegue){
-            timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.action), userInfo: nil, repeats: true)
+        //        func goBackToVC2(segue:UIStoryboardSegue){
+        //            timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.action), userInfo: nil, repeats: true)
+        //
+        //        score1  += 1
+        //
+        //
+        //
+        //        scoreLabel.text = "Score: \(score1)"
+        //        timer.text = "Timer: \(time)"
+        //    }
         
-        score1  += 1
-       
         
-        
-        scoreLabel.text = "Score: \(score1)"
-        timer.text = "Timer: \(time)"
     }
-
-
-}
 
 }
