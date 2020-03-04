@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum Color : CaseIterable {
-    case red, orange, yellow, green, blue, purple,black
+    case red, orange, yellow, green, blue, purple
     
     var textColor: UIColor {
         switch self {
@@ -26,8 +26,7 @@ enum Color : CaseIterable {
             return .blue
         case .purple:
             return .purple
-        case .black:
-            return .black
+
         }
     }
     
@@ -45,11 +44,9 @@ enum Color : CaseIterable {
             return "blue"
         case .purple:
             return "purple"
-        case .black:
-            return "black"
         }
     }
-    
+
     init() {
         self = .red
         self.getRandomOption()

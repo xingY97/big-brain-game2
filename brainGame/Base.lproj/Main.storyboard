@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -104,19 +104,39 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="n3L-Nn-2Q1"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomCardView" destination="Dn8-It-PK6" id="LZs-jl-ZhZ"/>
                         <outlet property="noButton" destination="9ml-BD-oky" id="Rs1-6P-otg"/>
                         <outlet property="pauseLabel" destination="E5e-8Y-kEa" id="nwg-eJ-F4X"/>
                         <outlet property="scoreLabel" destination="Z93-s3-pJR" id="ndo-oh-lVR"/>
+                        <outlet property="timer" destination="VN7-b7-R2c" id="NUm-j3-jFE"/>
                         <outlet property="topCardView" destination="kz1-91-eaq" id="jlC-dl-JJP"/>
                         <outlet property="yesButton" destination="8J6-CG-G28" id="KVi-ta-e5p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+            <point key="canvasLocation" x="2862.3188405797105" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nBZ-sF-QMf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AKt-i8-sIo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GIk-T1-Yg6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gF4-GJ-gft"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kak-it-q4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952.1739130434785" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
