@@ -17,7 +17,7 @@ class FirstVc: UIViewController {
     }
     
 
-    @IBAction func unwindToVC1(segue:UIStoryboardSegue){
+    @IBAction func unwindToVC1(segue:UIViewController){
         
     }
 

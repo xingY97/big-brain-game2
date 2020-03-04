@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var time = 2
+    var time = 10
     var timer1 = Timer()
     var score1 = 0
     
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
             time -= 1
             timer.text = "Timer: \(String(time))"
         }else {
-            time = 2
+            time = 10
             timer1.invalidate()
             performSegue(withIdentifier: "toResults", sender: self)
         }
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func checkAnswer(rightAnswer:Bool) {
+    func checkAnswer(yesTapped:Bool) {
         var colorsMatch = true
         
         if topTextColor == bottomCardColor{
@@ -57,13 +57,13 @@ class ViewController: UIViewController {
             colorsMatch = false
         }
         
-        if rightAnswer && colorsMatch {
+        if yesTapped && colorsMatch {
             score1 += 1
-        } else if rightAnswer && !colorsMatch{
+        } else if yesTapped && !colorsMatch{
+            score1 -= 1
+        } else if !yesTapped && !colorsMatch {
             score1 += 1
-        } else if !rightAnswer && !colorsMatch {
-            score1 += 1
-        } else if !rightAnswer && colorsMatch {
+        } else if !yesTapped && colorsMatch {
             score1 -= 1
         }
         
@@ -79,11 +79,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func noButtonTapped(_ sender: Any){
-        checkAnswer(rightAnswer: false)
+        checkAnswer(yesTapped: false)
     }
     
     @IBAction func yesButtonTapped(_ sender: Any){
-        checkAnswer(rightAnswer: true)
+        checkAnswer(yesTapped: true)
     }
     
 
@@ -101,7 +101,7 @@ class ViewController: UIViewController {
             timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.action), userInfo: nil, repeats: true)
         
         score1  += 1
-        time = 2
+        time = 10
         
         
         scoreLabel.text = "Score: \(score1)"
