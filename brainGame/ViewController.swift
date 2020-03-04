@@ -7,10 +7,11 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
     var time = 10
     var timer1 = Timer()
+
+class ViewController: UIViewController {
+
     var score1 = 0
     
     
@@ -35,7 +36,7 @@ class ViewController: UIViewController {
             time -= 1
             timer.text = "Timer: \(String(time))"
         }else {
-            time = 10
+            
             timer1.invalidate()
             performSegue(withIdentifier: "toResults", sender: self)
         }
@@ -101,7 +102,7 @@ class ViewController: UIViewController {
             timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.action), userInfo: nil, repeats: true)
         
         score1  += 1
-        time = 10
+       
         
         
         scoreLabel.text = "Score: \(score1)"
