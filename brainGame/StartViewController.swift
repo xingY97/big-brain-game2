@@ -15,9 +15,11 @@ class FirstVc: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    @IBAction func goBackToVC1(segue:UIStoryboardSegue){
-    }
     
+
+    @IBAction func unwindToVC1(segue:UIStoryboardSegue){
+        
+    }
 
 
 }

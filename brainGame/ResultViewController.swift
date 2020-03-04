@@ -11,14 +11,18 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    var expectScore: Int = 0
+    var expectScore: Int?
     
-    @IBOutlet weak var resultScore: UILabel!
+    @IBOutlet weak var ResultScore: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            resultScore.text = "Your Score: \(expectScore)"
+        if let score1 = expectScore{
+            ResultScore.text = "Your Score: \(score1)"
+        }else {
+            print ("data didnt transfer")
+        }
        
     }
     

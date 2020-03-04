@@ -9,93 +9,99 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var time = 60
+    var time = 2
     var timer1 = Timer()
     var score1 = 0
     
     
     @IBOutlet weak var timer: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var pauseLabel: UIButton!
     @IBOutlet weak var topCardView: UILabel!
     @IBOutlet weak var bottomCardView: UILabel!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
     
     var topTextColor = Color ()
-    var bottomTextColor = Color ()
+    var bottomCardColor = Color ()
+    
+    var score: Int = 0 {
+      didSet {
+        scoreLabel.text = String(score)
+      }
+    }
     
     @objc func action() {
         if time != 0 {
             time -= 1
             timer.text = "Timer: \(String(time))"
         }else {
-            time = 60
+            time = 2
             timer1.invalidate()
-            performSegue(withIdentifier: "toResults", sender: score1)
+            performSegue(withIdentifier: "toResults", sender: self)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         if segue.identifier == "toResults" {
-            let controller = segue.destination  as! ResultViewController
-            guard let score = sender as? Int else {
-                return
-            }
-            controller.expectScore = score
-            score1 = 0
-
+        if let destination = segue.destination as? ResultViewController{
+            destination.expectScore = score1
+            
         }
     }
-    @IBAction func noButtonTapped(_ sender: Any){
-        checkAnswer(True: false)
-    }
     
-    @IBAction func yesButtonTapped(_ sender: Any){
-        checkAnswer(True: true)
-    }
-    
-    func checkAnswer(True:Bool) {
+    func checkAnswer(rightAnswer:Bool) {
         var colorsMatch = true
         
-        if topTextColor == bottomTextColor{
+        if topTextColor == bottomCardColor{
             colorsMatch = true
         }else {
             colorsMatch = false
         }
         
-        if True && colorsMatch {
+        if rightAnswer && colorsMatch {
             score1 += 1
-        } else if True && !colorsMatch{
+        } else if rightAnswer && !colorsMatch{
             score1 += 1
-        } else if !True && !colorsMatch {
+        } else if !rightAnswer && !colorsMatch {
             score1 += 1
-        } else if !True && colorsMatch {
+        } else if !rightAnswer && colorsMatch {
             score1 -= 1
         }
         
         scoreLabel.text = "Score: \(score1)"
         
         topTextColor.getRandomOption()
-        bottomTextColor.getRandomOption()
+        bottomCardColor.getRandomOption()
         
         topCardView.text = topTextColor.text
         bottomCardView.text = Color().text
         
-        bottomCardView.textColor = bottomTextColor.textColor
+        bottomCardView.textColor = bottomCardColor.textColor
     }
+    
+    @IBAction func noButtonTapped(_ sender: Any){
+        checkAnswer(rightAnswer: false)
+    }
+    
+    @IBAction func yesButtonTapped(_ sender: Any){
+        checkAnswer(rightAnswer: true)
+    }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topCardView.text = topTextColor.text
         bottomCardView.text = Color().text
         
-        bottomCardView.textColor = bottomTextColor.textColor
+        bottomCardView.textColor = bottomCardColor.textColor
         
         timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.action), userInfo: nil, repeats: true)
         
-        score1  = 0
-        time = 60
+        func goBackToVC2(segue:UIStoryboardSegue){
+            timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.action), userInfo: nil, repeats: true)
+        
+        score1  += 1
+        time = 2
         
         
         scoreLabel.text = "Score: \(score1)"
@@ -105,3 +111,4 @@ class ViewController: UIViewController {
 
 }
 
+}
