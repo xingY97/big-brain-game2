@@ -98,18 +98,6 @@ class ViewController: UIViewController {
         
         timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.action), userInfo: nil, repeats: true)
         
-        //        func goBackToVC2(segue:UIStoryboardSegue){
-        //            timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.action), userInfo: nil, repeats: true)
-        //
-        //        score1  += 1
-        //
-        //
-        //
-        //        scoreLabel.text = "Score: \(score1)"
-        //        timer.text = "Timer: \(time)"
-        //    }
-        
-        
     }
 
 }
